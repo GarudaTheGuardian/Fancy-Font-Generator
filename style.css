@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+/* Matrix Rain Effect */
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Fancy Font Generator Container */
+#font-generator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #00ff00;
+    font-size: 1.5rem;
+    padding: 20px;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px #00ff00;
+}
+
+#font-generator h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+#font-generator input[type="text"],
+#font-generator select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #00ff00;
+    background: #000;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+#font-generator button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: #000;
+    background: #00ff00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+#font-generator button:hover {
+    background: #00cc00;
+    transform: scale(1.1);
+}
+
+/* Matrix Rain Animation */
+@keyframes rain {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+.matrix {
+    font-size: 1rem;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+    animation: rain 3s linear infinite;
+}
