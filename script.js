@@ -3,7 +3,7 @@ function generateFancyFonts() {
     const outputDiv = document.getElementById("output");
 
     if (!inputText) {
-        outputDiv.innerHTML = "<p>Please enter some text to generate fancy fonts.</p>";
+        outputDiv.innerHTML = "<p> Provide text for font styling</p>";
         return;
     }
 
