@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Font Generator</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0f0f0f;
+            color: #00ff00;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            background-color: #111;
+            color: #0f0;
+            border: 1px solid #0f0;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #0f0;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #00cc00;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #0f0;
+            background-color: #111;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fancy Font Generator</h1>
+    <input type="text" id="textInput" placeholder="Enter your text here">
+    <button onclick="generateFancyFonts()">Generate Fonts</button>
+    <div id="output" class="output"></div>
+    <script src="fancy-font-generator.js"></script>
+</body>
+</html>
