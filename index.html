@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fancy Font Generator</title>
     <style>
+        /* Basic Styling */
         body {
             font-family: 'Courier New', Courier, monospace;
             background-color: #0f0f0f;
@@ -42,6 +43,12 @@
         p {
             margin: 10px 0;
         }
+
+        /* Add some visual appeal */
+        .output {
+            border-radius: 5px; 
+            box-shadow: 0 2px 5px rgba(0, 255, 0, 0.2); 
+        }
     </style>
 </head>
 <body>
@@ -49,6 +56,29 @@
     <input type="text" id="textInput" placeholder="Enter your text here">
     <button onclick="generateFancyFonts()">Generate Fonts</button>
     <div id="output" class="output"></div>
-    <script src="script.js"></script>
+
+    <script>
+        function generateFancyFonts() {
+            const inputText = document.getElementById('textInput').value;
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; // Clear previous output
+
+            // Array of fancy font styles (you can add more)
+            const fancyFonts = [
+                { name: "Small Caps", style: "font-variant: small-caps;" },
+                { name: "Italic", style: "font-style: italic;" },
+                { name: "Bold", style: "font-weight: bold;" },
+                { name: "Bold Italic", style: "font-weight: bold; font-style: italic;" },
+                { name: "Monospace", style: "font-family: monospace;" }, 
+            ];
+
+            fancyFonts.forEach(font => {
+                const p = document.createElement('p');
+                p.textContent = `${font.name}: ${inputText}`;
+                p.style.cssText = font.style; 
+                outputDiv.appendChild(p);
+            });
+        }
+    </script>
 </body>
 </html>
