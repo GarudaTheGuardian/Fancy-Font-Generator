@@ -10,21 +10,21 @@ function generateFancyFonts() {
     const fancyFonts = {
         "Double Struck Font": text => text.split('').map(char => {
             if (/[A-Za-z]/.test(char)) {
-                return String.fromCharCode(char.charCodeAt(0) + (char >= 'a' ? 120120 : 120088));
+                return String.fromCodePoint(char.charCodeAt(0) + (char >= 'a' ? 120120 - 97 : 120088 - 65));
             }
             return char;
         }).join(''),
 
         "Bold Fraktur Font": text => text.split('').map(char => {
             if (/[A-Za-z]/.test(char)) {
-                return String.fromCharCode(char.charCodeAt(0) + (char >= 'a' ? 120172 : 120144));
+                return String.fromCodePoint(char.charCodeAt(0) + (char >= 'a' ? 120172 - 97 : 120144 - 65));
             }
             return char;
         }).join(''),
 
         "Bold Script Font": text => text.split('').map(char => {
             if (/[A-Za-z]/.test(char)) {
-                return String.fromCharCode(char.charCodeAt(0) + (char >= 'a' ? 120094 : 120066));
+                return String.fromCodePoint(char.charCodeAt(0) + (char >= 'a' ? 120094 - 97 : 120066 - 65));
             }
             return char;
         }).join(''),
