@@ -4,37 +4,53 @@
   <title>Fancy Font Generator</title>
   <style>
     body {
-      font-family: monospace;
-      background-color: #000;
-      color: #0f0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
       text-align: center;
+      padding: 20px;
     }
     input {
-      background-color: #111;
-      color: #0f0;
-      border: 1px solid #0f0;
+      width: 80%;
+      max-width: 400px;
       padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
     button {
-      background-color: #0f0;
-      color: #000;
-      border: none;
       padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
     }
     .output {
       margin-top: 20px;
       padding: 10px;
-      border: 1px solid #0f0;
-      background-color: #111;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      font-size: 16px;
+      text-align: left;
+      display: inline-block;
+      max-width: 80%;
+      overflow-x: auto;
     }
   </style>
 </head>
 <body>
   <h1>Fancy Font Generator</h1>
-  <input type="text" id="textInput" placeholder="Enter text">
-  <button onclick="generateFonts()">Generate</button>
-  <div id="output"></div>
+  <input type="text" id="textInput" placeholder="Enter your text here">
+  <button onclick="generateFancyFonts()">Generate</button>
+  <div id="output" class="output"></div>
   <script src="script.js"></script>
 </body>
 </html>
