@@ -4,45 +4,66 @@
   <title>Fancy Font Generator</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #8fd3f4, #84fab0);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
       color: #333;
       text-align: center;
       padding: 20px;
     }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
     input {
       width: 80%;
       max-width: 400px;
-      padding: 10px;
-      margin: 10px 0;
+      padding: 12px;
+      margin: 15px 0;
       font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      outline: none;
     }
+
     button {
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 16px;
       color: #fff;
-      background-color: #007bff;
+      background: #ff6f61;
       border: none;
-      border-radius: 5px;
+      border-radius: 25px;
       cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
     }
+
     button:hover {
-      background-color: #0056b3;
+      background: #e35550;
     }
+
     .output {
       margin-top: 20px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      background-color: #fff;
+      padding: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 255, 255, 0.8);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
+      border-radius: 10px;
       font-size: 16px;
       text-align: left;
       display: inline-block;
-      max-width: 80%;
-      overflow-x: auto;
+      max-width: 90%;
+      word-wrap: break-word;
     }
   </style>
 </head>
