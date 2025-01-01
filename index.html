@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fancy Font Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&family=Alex+Brush&family=Rock+Salt&family=Croissant+One&family=Amita&family=Cookie&family=Allura&family=Grape+Nuts&family=Cutive+Mono&family=Text+Me+One&family=Bunya&display=swap" rel="stylesheet">
   <style>
-    /* General Body Styling */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #8fd3f4, #84fab0);
@@ -20,13 +22,11 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Header Styling */
     h1 {
       color: #fff;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    /* Input Styling */
     input {
       width: 80%;
       max-width: 400px;
@@ -39,7 +39,6 @@
       outline: none;
     }
 
-    /* Button Styling */
     button {
       padding: 12px 25px;
       font-size: 16px;
@@ -56,7 +55,6 @@
       background: #e35550;
     }
 
-    /* Output Styling */
     .output {
       margin-top: 20px;
       padding: 15px;
@@ -77,12 +75,38 @@
   <input type="text" id="textInput" placeholder="Enter your text here">
   <button onclick="generateFancyFonts()">Generate</button>
   <div id="output" class="output"></div>
-  
+
   <script>
     function generateFancyFonts() {
-      const text = document.getElementById('textInput').value;
-      const fancyText = `🌟 ${text} 🌟`; // Simple example for fancy text
-      document.getElementById('output').innerText = fancyText;
+      const inputText = document.getElementById("textInput").value;
+      const outputDiv = document.getElementById("output");
+
+      if (!inputText) {
+        outputDiv.innerHTML = "<p>Provide text for font styling</p>";
+        return;
+      }
+
+      const fancyFonts = {
+        "Lobster": `font-family: 'Lobster', cursive;`,
+        "Pacifico": `font-family: 'Pacifico', cursive;`,
+        "Alex Brush": `font-family: 'Alex Brush', cursive;`,
+        "Rock Salt": `font-family: 'Rock Salt', cursive;`,
+        "Croissant One": `font-family: 'Croissant One', cursive;`,
+        "Amita": `font-family: 'Amita', cursive;`,
+        "Cookie": `font-family: 'Cookie', cursive;`,
+        "Allura": `font-family: 'Allura', cursive;`,
+        "Grape Nuts": `font-family: 'Grape Nuts', cursive;`,
+        "Bunya": `font-family: 'Bunya', sans-serif;`,
+        "Cutive Mono": `font-family: 'Cutive Mono', monospace;`,
+        "Text Me One": `font-family: 'Text Me One', sans-serif;`
+      };
+
+      let outputHTML = "";
+      for (const [fontName, fontStyle] of Object.entries(fancyFonts)) {
+        outputHTML += `<p style="${fontStyle}">${fontName}: ${inputText}</p>`;
+      }
+
+      outputDiv.innerHTML = outputHTML;
     }
   </script>
 </body>
