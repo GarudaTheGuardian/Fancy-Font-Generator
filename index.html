@@ -3,6 +3,7 @@
 <head>
   <title>Fancy Font Generator</title>
   <style>
+    /* General Body Styling */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #8fd3f4, #84fab0);
@@ -19,11 +20,13 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* Header Styling */
     h1 {
       color: #fff;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
+    /* Input Styling */
     input {
       width: 80%;
       max-width: 400px;
@@ -36,6 +39,7 @@
       outline: none;
     }
 
+    /* Button Styling */
     button {
       padding: 12px 25px;
       font-size: 16px;
@@ -52,6 +56,7 @@
       background: #e35550;
     }
 
+    /* Output Styling */
     .output {
       margin-top: 20px;
       padding: 15px;
@@ -72,6 +77,13 @@
   <input type="text" id="textInput" placeholder="Enter your text here">
   <button onclick="generateFancyFonts()">Generate</button>
   <div id="output" class="output"></div>
-  <script src="script.js"></script>
+  
+  <script>
+    function generateFancyFonts() {
+      const text = document.getElementById('textInput').value;
+      const fancyText = `🌟 ${text} 🌟`; // Simple example for fancy text
+      document.getElementById('output').innerText = fancyText;
+    }
+  </script>
 </body>
 </html>
